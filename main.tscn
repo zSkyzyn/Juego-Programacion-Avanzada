@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cyvypjw326huo"]
+
+[ext_resource type="Script" uid="uid://cm4dsslavxjhh" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://g0pwgovijvxw" path="res://hotdog.png" id="2_0xm2m"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0xm2m"]
+load_path = "res://.godot/imported/fondo.png-ba70bfea8a1397320d702391fbab30ab.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(64, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(1161.2813, 118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(234.5, 232.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
+size = Vector2(160, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(245.5, 15)
+
+[node name="Main" type="Node2D" unique_id=212275196]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=462034089]
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+
+[node name="fondo" type="TextureRect" parent="Camera2D" unique_id=1061135769]
+offset_left = -594.0
+offset_top = -345.0
+offset_right = 585.0
+offset_bottom = 338.0
+texture = SubResource("CompressedTexture2D_0xm2m")
+expand_mode = 1
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=696101301]
+script = ExtResource("1_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1735617504]
+position = Vector2(2, -15.999998)
+scale = Vector2(0.1459517, 0.13636366)
+texture = ExtResource("2_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=49575673]
+position = Vector2(1, -16.5)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Escenario" type="Node2D" parent="." unique_id=2042015901]
+
+[node name="SueloPrincipal" type="StaticBody2D" parent="Escenario" unique_id=866523055]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/SueloPrincipal" unique_id=359896122]
+position = Vector2(4.359375, 278)
+shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="ParedIzquierda" type="StaticBody2D" parent="Escenario" unique_id=918453260]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/ParedIzquierda" unique_id=1425043143]
+position = Vector2(-462.25, 101.25)
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="Plataforma1" type="StaticBody2D" parent="Escenario" unique_id=1825381983]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/Plataforma1" unique_id=2082270857]
+position = Vector2(203, 125.5)
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="Plataforma2" type="StaticBody2D" parent="Escenario" unique_id=1300137610]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escenario/Plataforma2" unique_id=408266201]
+position = Vector2(450.75, -7.5)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Plataforma3" type="StaticBody2D" parent="Escenario" unique_id=1431693338]
+
+[node name="Plataforma4" type="StaticBody2D" parent="Escenario" unique_id=36892694]
